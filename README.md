@@ -26,3 +26,10 @@ Toolchain: crosstool-ng
     if [ $? != 0 ]; then echo "ERROR"; exit; fi
 
 
+sh QEMU_AUDIO_DRV=none qemu-system-arm -m 256M -nographic -M versatilepb -kernel zImage --append "console=ttyAMA0, 115200" -dtb versatile-pb.dtb
+
+QEMU_AUDIO_DRV=none \
+
+qemu-system-arm -m 256M -nographic -M versatilepb -kernel \ zImage
+
+-append "console=ttyAMA0,115200" -dtb versatile-pb.dtb
